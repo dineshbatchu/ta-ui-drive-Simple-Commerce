@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js --watch src",
+    "start": "nodemon --watch src --exec \"npm run build && node index.js\"",
     "test": "mocha",
-    "build": "npm run clean && eslint ./src/**/*.js && npm test && babel src -d build/js && npm run copy",
+    "build": "eslint ./src/**/*.js",
     "clean": "del ./build",
     "copy": "copyfiles -u 1 ./src/**/* ./build/",
     "document": "jsdoc"
