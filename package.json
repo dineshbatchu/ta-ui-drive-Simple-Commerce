@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch src --exec \"npm run build && node index.js\"",
+    "start": "nodemon --watch src --exec \"npm run build && node index.js\" & browser-sync start --proxy localhost:3400 --files 'src'  --reload-delay 2000 --reload-debounce 5",
     "test": "mocha",
     "build": "eslint ./src/**/*.js",
     "clean": "del ./build",
@@ -32,6 +32,7 @@
     "nyc": "^14.1.1"
   },
   "dependencies": {
+    "browser-sync": "^2.26.7",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "window": "^4.2.6"
